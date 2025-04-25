@@ -3,7 +3,7 @@
  * @Email: haixuanwoTxh@gmail.com
  * @Date: 2025-04-11 21:22:36
  * @LastEditors: Clark
- * @LastEditTime: 2025-04-25 23:22:24
+ * @LastEditTime: 2025-04-25 23:34:01
  * @Description: file content
  */
 
@@ -33,7 +33,7 @@ int save_score(unsigned int score, char *fileName)
     return 0;
 }
 
-int get_score(unsigned int score, char *fileName)
+int get_score(unsigned int *score, char *fileName)
 {
     FILE *fp;
     fp = fopen(fileName, "r+");
@@ -47,8 +47,8 @@ int get_score(unsigned int score, char *fileName)
         }
     }
 
-    size_t len = fread(&score, 1, sizeof(unsigned int), fp);
-    printf("fread len[%lu] score[%u]\n", len, score);
+    size_t len = fread(score, 1, sizeof(unsigned int), fp);
+    printf("fread len[%lu] score[%u]\n", len, *score);
 
     fclose(fp);
     return 0;
@@ -58,6 +58,6 @@ int main()
 {
     save_score(totalScore, "test.txt");
 
-    get_score(totalScore, "test.txt");
+    get_score(&totalScore, "test.txt");
     return 0;
 }
