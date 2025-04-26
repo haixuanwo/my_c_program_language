@@ -3,7 +3,7 @@
  * @Email: haixuanwoTxh@gmail.com
  * @Date: 2025-04-10 21:50:07
  * @LastEditors: Clark
- * @LastEditTime: 2025-04-10 22:16:33
+ * @LastEditTime: 2025-04-26 10:32:05
  * @Description: file content
 -->
 
@@ -74,10 +74,10 @@
     <<, >>, &, |, !
 
 ## 14 预处理
-    #define, #undef, #include,
+    #define, #undef, #include,#ifndef, #endif
     #line, #error, #pragma, _Noreturn
     exit(), atexit()
     qsort
     assert, _Static_assert
-    memcpy, memmove
+    memcpy, memmove, memcmp
 
